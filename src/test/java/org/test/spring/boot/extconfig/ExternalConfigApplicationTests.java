@@ -13,11 +13,11 @@ import static org.hamcrest.Matchers.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ExternalConfigApplication.class)
 public class ExternalConfigApplicationTests {
-	@Value("${configLocation:unknown}")
-	private String configLocation;
+	@Value("${dataSource:unknown}")
+	private String dataSource;
 
 	@Test
-	public void contextLoads() {
-		assertThat(configLocation, equalTo("test/resources"));
+	public void testConfigLocation() {
+		assertThat(dataSource, equalTo("testing"));
 	}
 }
